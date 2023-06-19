@@ -5,4 +5,7 @@ export enum EnvNames {
   NODE_ENV = "NODE_ENV",
   NODE_ENV_DEV = "development",
   NODE_ENV_PROD = "production",
+  DB_LOGIN = "DB_LOGIN",
+  DB_PASS = "DB_PASS",
+  DB_HOST = "DB_HOST",
 }
