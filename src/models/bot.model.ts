@@ -1,13 +1,13 @@
-import { employees } from "../db/Schemas/employees";
+import { Employee } from "../db/Schemas/Employee";
 
 export const createBirthdayPeople = async (
   arrNames: string[],
   arrBirthdates: (Date | undefined)[],
   userId: string | undefined
 ) => {
-  const users: InstanceType<typeof employees>[] = [];
+  const users: InstanceType<typeof Employee>[] = [];
 
-  await employees.create(
+  await Employee.create(
     ...arrNames.map((el, i) => {
       return {
         fullName: el,
@@ -33,7 +33,7 @@ export const createBirthdayPeople = async (
 
   for await (let name of arrNames) {
     const items = (
-      await employees.find({
+      await Employee.find({
         fullName: name,
         user: userId,
       })
